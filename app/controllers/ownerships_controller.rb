@@ -23,6 +23,9 @@ class OwnershipsController < ApplicationController
       #     self.wants.find_or_create_by(item_id: item.id)
       # end
       flash[:success] = '商品をWantしました'
+    else
+      current_user.have(@item)
+      flash[:success] = '商品をHaveしました'
     end
   
     redirect_back(fallback_location: root_path)
@@ -37,8 +40,12 @@ class OwnershipsController < ApplicationController
     if params[:type] =='Want'
       current_user.unwant(@item)
       flash[:success] = '商品のWantを解除しました'
+    else  
+      current_user.unhave(@item)
+      flash[:success] = '商品のHaveを解除しました'
     end
     
     redirect_back(fallback_location: root_path)
   end
+
 end

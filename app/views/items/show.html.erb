@@ -9,6 +9,7 @@
                     <p class="item-title"><%= @item.name %></p>
                     <div class="buttons text-center">
                         <%= render 'ownerships/want_button', item: @item %>
+                        <%= render 'ownerships/have_button', item: @item %>
                     </div>
                 </div>
             </div>
@@ -34,6 +35,9 @@
                     Haveしたユーザー
                 </div>
                 <div class="panel-body">
+                    <% @have_users.each do |user| %>
+                      <%= link_to user.name, user_path(user) %>
+                    <% end %>  
                 </div>
             </div>
         </div>
