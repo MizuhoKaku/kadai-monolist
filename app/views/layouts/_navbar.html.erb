@@ -22,6 +22,16 @@
                       
                       <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                              <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+                              ランキング
+                          </a>
+                          <ul class="dropdown-menu">
+                              <Li><%= link_to 'Wantランキング', rankings_want_path %></Li>
+                          </ul>
+                      </li>
+                      
+                      <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               <span class="gravatar">
                                   <img src="<%= gravatar_url(current_user, size: 20) %>" alt="" class="img-circle">
                               </span>
