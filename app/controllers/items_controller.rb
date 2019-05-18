@@ -11,12 +11,12 @@ class ItemsController < ApplicationController
         imageFlag: 1,
         hits: 20,
       })
-      
+      ::Rails.logger.debug("#{results}")
       results.each do |result|
         item = Item.find_or_initialize_by(read(result))
         @items << item
-      end  
-    end
+      end
+    end  
   end
   
   def show
